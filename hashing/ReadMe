@@ -1,0 +1,36 @@
+Result : 
+
+In Name Map, the least number of collisions happened with hash code as "Polynomial Sum" with a = 33 and hash function as "Multiply and Divide" with a = 2539 and b = 2521.
+
+In Number Map, the least number of collisions happened with hash code as "Polynomial Sum" with a = 33 and hash function multiplication.
+
+Name Map:
+
+Bucket Size = 2531, entries in .txt file = 4315. 
+Minimum Possible Collisions : 1784, which is around 41%, the best result i got is 51.4484% . The difference may because because of low distribution of the ASCII values of characters.
+
+Hash Code:
+Integer Casting : Took the last 32 bits of the string. Collision Rate would be high since people with same last 4 characters would have same hash codes, hence this method was not that efficient.
+Component Sum: Unweighted sum of characters in a string would create same hash codes for anagrams, hence collision rate would be high.
+Polynomial Sum: By adding weights to the ASCII values, it decreases the collision rate by a lot, taking a = 33 gave the best average result over all three hash functions, though sum values of a performed better with certain hash functions.
+Cycle Shift: By continuous shifting of the sum of ASCII values, the collision rate was decreased. 
+
+Hash Function:
+Divide : 2531 is a prime number, hence it was good enough to be used as a number with which modulus of the hash code could be taken.
+MAD : a = 2539, b = 2521, gave the best results during experimentation
+Multiply : A = 0.61803398875 and m = 4096 gave decent results.
+
+Number Map:
+Bucket Size = 743, entries in .txt file = 1099.
+Minimum Possible Collisions = 356, which is around 32%, my best result was around 46.8608%. Difference can be because the mobile numbers are not completely distributed. They mostly start with specific numbers like 9, 8, 7.
+
+Hash Code:
+Integer Casting : Took the last 32 bits of the phone number. Collision Rate was decent as a 10 digit mobile number would have taken at most 34 bits, hence the last 32 might have been more or less unique.
+Component Sum: The number of divided into packets of single byte, and added up. It gave decent results too.
+Polynomial Sum: By adding weights to the byte packets there was not much improvement in the result.
+Cycle Shift: By continuous shifting of the byte packets gave the best result.
+
+Hash Function:
+Divide : 743 is a prime number, hence it was good enough to be used as a number with which modulus of the hash code could be taken.
+MAD : a = 2539, b = 2521, gave the best results during experimentation
+Multiply : A = 0.61803398875 and m = 4096 gave decent results.

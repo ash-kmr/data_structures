@@ -1,0 +1,13 @@
+MAVLTree : Implementation of avl tree.
+
+Functions:
+
+insert(): insert a node into the tree in O(logn).
+
+remove(): remove a key from the tree in O(logn).
+
+delete_by_place(): delete by place of the key in the tree in O(logn)
+
+get_place(): get the place of a key in the tree in O(logn)
+
+string(): get the Value of a node in O(logn)
