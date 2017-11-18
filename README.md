@@ -1,5 +1,2 @@
 # data_structures
-Implementation of applications of different data structures.
-
-##Project Title:
-Implementation of different data structures. Implementation is in C++ language.
+Implementation of applications of different data structures. The implementation is in C++ language.
